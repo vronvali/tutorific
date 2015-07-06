@@ -1,6 +1,10 @@
 language: node_js
 node_js:
   - '0.10.33'
+env:
+  global:
+  - GH_REF: github.com/vronvali/mytodo-gulp.git
+  - GH_TOKEN: lclFohRIQH5VgnfRH3hdIMWeabKpeV9NvojOZbfBZwjvN3NrQmrXQeh+N7khbnpPLkfeB33moSavF+9+sEiAJuVZOnTXBBx/JBRY/4teWqTbXatQ5DuNrHqEfRsXndxFPSFM1ns1XFwAb1OofG4ZHhZ+rH6hjQsO2qpkpMoM1vYN6kj8JwcHcMv4Xgz1zuXS9bZugSR6ZboioOUTMzMcmymXQoB+bepGp7/xyZRPtLX1cfywALpKyp71KYlg9Njpu8jWZdK86lmxJuqeNDNRZoI2eza2MzzSUxjvauhGHH9ex2Wm+AA7cU+8VchUPFIIl9VQAZ39F5KR532EJA5bJ27zPRHPf1C+fW7uabPtob7+c3epp1UBtmEI/dgm2TN8ezFUJcEs7Cw83yZIQNUly3IQcbzgyJuJO2zrQnftbw/OfqqSsOnt+tRaYJ56cezKXobj74eX+8MEMI6XCOA47i59wHxZhubEM12MkXF49LH4ZlNSWXNAXYKq0KCY9VQ98TEpiLMt251J2sfj3uXaln+Bb/7m8n5czQJBeeJowlwrboarrTznMsJj0NOPwnKxxX219YnmstrHHeI/T7CRucaY3wwd9Kaux8tUjMuHMSoBDPSw+rC0G1v3Fj2Jf+YQk/8dYHxZskP70SvWHn2x8nfL/E8k1Sqv++LqKX3SLig=
 before_script:
   - 'export CHROME_BIN=chromium-browser'
   - 'export DISPLAY=:99.0'
@@ -11,3 +15,4 @@ before_script:
 
 after_script:
   - 'npm test' # or other command for build, run tests, etc
+
