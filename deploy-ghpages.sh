@@ -4,20 +4,17 @@ set -o errexit -o nounset
 
 rev=$(git rev-parse --short HEAD)
 
-cd stage/_book
-
-git init
 git config user.name "Travis"
 git config user.email "vronvali@cesine.ca"
-
-git remote add upstream "https://$GH_TOKEN@github.com/vronvali/vronvali.github.io.git"
-git fetch upstream
-git reset upstream/gh-pages
+git remote rm mywebsite
+git remote add mywebsite "https://$GH_TOKEN@github.com/vronvali/vronvali.github.io.git"
+git fetch mywebsite
+git branch -u mywebsite/gh-pages gh-pages
 
 echo "vronvali.com" > CNAME
 
-touch .
+gulp
 
 git add -A dist
 git commit -m "rebuild todoApp at ${rev}"
-git push -q upstream HEAD:gh-pages
+git push -q mywebsite HEAD:gh-pages

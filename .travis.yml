@@ -1,20 +1,18 @@
 language: node_js
 node_js:
-  - '0.10.33'
+  - 0.10.33
 env:
   global:
-  - GH_REF: github.com/vronvali/mytodo-gulp.git
-  - GH_TOKEN: lclFohRIQH5VgnfRH3hdIMWeabKpeV9NvojOZbfBZwjvN3NrQmrXQeh+N7khbnpPLkfeB33moSavF+9+sEiAJuVZOnTXBBx/JBRY/4teWqTbXatQ5DuNrHqEfRsXndxFPSFM1ns1XFwAb1OofG4ZHhZ+rH6hjQsO2qpkpMoM1vYN6kj8JwcHcMv4Xgz1zuXS9bZugSR6ZboioOUTMzMcmymXQoB+bepGp7/xyZRPtLX1cfywALpKyp71KYlg9Njpu8jWZdK86lmxJuqeNDNRZoI2eza2MzzSUxjvauhGHH9ex2Wm+AA7cU+8VchUPFIIl9VQAZ39F5KR532EJA5bJ27zPRHPf1C+fW7uabPtob7+c3epp1UBtmEI/dgm2TN8ezFUJcEs7Cw83yZIQNUly3IQcbzgyJuJO2zrQnftbw/OfqqSsOnt+tRaYJ56cezKXobj74eX+8MEMI6XCOA47i59wHxZhubEM12MkXF49LH4ZlNSWXNAXYKq0KCY9VQ98TEpiLMt251J2sfj3uXaln+Bb/7m8n5czQJBeeJowlwrboarrTznMsJj0NOPwnKxxX219YnmstrHHeI/T7CRucaY3wwd9Kaux8tUjMuHMSoBDPSw+rC0G1v3Fj2Jf+YQk/8dYHxZskP70SvWHn2x8nfL/E8k1Sqv++LqKX3SLig=
+    - GH_REF: github.com/vronvali/mytodo-gulp.git
+    - secure: neunZFaBP3cEgEltMWSMmT9VJB3vhAIE1hZfehZoyHnsM1xGrMHp4P9rH/d/BJYo+umn4vjDJ82cfdThFzgyi0K5qT7L7Hkj/YhHvYCzCiVun1HOPVhEqPm8T88AsqJdyF+Eld28hGKG/FRNyYGsn81J0UAS4d+lfDRdxprEX9quif9NKIbYsCh6SGVfkBzYo94fBf7Lky3Vje0dRIXfH47kz0w6d1mYmFYGsYtRIkX3OINI1RT5ctPkT7FT6A+QD6ZO0tncpQuqg0SfPcKnq43s09inlx8zW87prGbHWCCt4TVCHABbm3QUsOXuS48b1wsVaII9JKrNWRSJClfRzTdtUtlcds0nN+iOgTAQmpwrSpOhS1W4/Nbmy3SyY6cpjq7IsogJhNShwNb9FipP/4KY0hXh1DDcSxQDnbExu/5vsvAeD/fMANWebq3vCnRtl6+PdftrdMvOpFqZoRiIxAzRJMeNx6yr3cX7mZ8zfLTDWbQSz2g6/lBX4qvtvXg7OhCUoeKcvP+cycDOJZDI7ePvhYwdbC1D9syr6wwT4lhzIQpmgtSGg7GslX3L1IsRtLnXJi/F4dXJsCBy1qgBjMBvhgWrZ2hhYhqZpOllV9bWOxjmaF7iN3kgzRE0dbwQFy1rJ3l7hjK88sQuHPPglYk6LcEOlAj9UGdkehtnm/M=
 before_script:
-  - 'export CHROME_BIN=chromium-browser'
+  - export CHROME_BIN=chromium-browser
   - 'export DISPLAY=:99.0'
-  - 'sh -e /etc/init.d/xvfb start'
-  - 'npm install -g bower karma grunt-cli jshint'
-  - 'npm install' # install npm packages
-  - 'bower install' # install bower packages
-
+  - sh -e /etc/init.d/xvfb start
+  - npm install -g bower karma grunt-cli jshint
+  - npm install
+  - bower install
 after_script:
-  - 'npm test' # or other command for build, run tests, etc
-
+  - npm test
 after_success:
-  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && bash deploy.sh
+  - 'test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && bash deploy.sh'
