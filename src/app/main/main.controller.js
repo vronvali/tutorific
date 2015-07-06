@@ -1,39 +1,25 @@
-(function() {
-  'use strict';
+'use strict';
 
-  angular
-    .module('mytodo')
-    .controller('MainController', MainController);
+/**
+ * @ngdoc function
+ * @name mytodoApp.controller:MainController
+ * @description
+ * # MainController
+ * Controller of the mytodoApp
+ */
+angular.module('mytodo')
+  .controller('MainController', function ($scope, localStorageService) {
+    var todosInStore =localStorageService.get('todos');
+    $scope.todos =todosInStore || [];
 
-  /** @ngInject */
-  function MainController($timeout, webDevTec, toastr) {
-    var vm = this;
-
-    vm.awesomeThings = [];
-    vm.classAnimation = '';
-    vm.creationDate = 1436195247035;
-    vm.showToastr = showToastr;
-
-    activate();
-
-    function activate() {
-      getWebDevTec();
-      $timeout(function() {
-        vm.classAnimation = 'rubberBand';
-      }, 4000);
-    }
-
-    function showToastr() {
-      toastr.info('Fork <a href="https://github.com/Swiip/generator-gulp-angular" target="_blank"><b>generator-gulp-angular</b></a>');
-      vm.classAnimation = '';
-    }
-
-    function getWebDevTec() {
-      vm.awesomeThings = webDevTec.getTec();
-
-      angular.forEach(vm.awesomeThings, function(awesomeThing) {
-        awesomeThing.rank = Math.random();
-      });
-    }
-  }
-})();
+    $scope.$watch('todos',function(){
+      localStorageService.set('todos', $scope.todos);
+    }, true);
+    $scope.addTodo = function(){
+      $scope.todos.push($scope.todo);
+      $scope.todo =' ';
+    };
+    $scope.removeTodo = function(index) {
+      $scope.todos.splice(index, 1);
+    };
+  });
