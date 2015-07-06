@@ -16,3 +16,5 @@ before_script:
 after_script:
   - 'npm test' # or other command for build, run tests, etc
 
+after_success:
+  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && bash deploy.sh
