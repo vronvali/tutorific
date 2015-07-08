@@ -18,8 +18,26 @@
     <!-- css files will be automatically insert here -->
     <!-- endinject -->
     <!-- endbuild -->
-  </head>
+  
+   <link rel="stylesheet" type="text/css" href="index.css">
+    </head>
   <body>
+    <div id="blanket" style="display:none"></div>
+<div id="popUpDiv" style="display:none">
+<h1>What is our app?</h1>
+            <p>This app is a virtual todo list.</p>
+     <h2>Add/Remove Todos</h2>
+            <p>Type todos into prompted box "What needs to be done?" Once done with your task remove it using the red x.</p>
+            <h3>Storage</h3>
+            <p>Local storage allows you to keep your list even if you close the tab or refresh the page.</p>
+<a href="#" onclick="popup('popUpDiv')" >Close Tutorial</a>
+</div>
+<a href="#" onclick="popup('popUpDiv')"></a>
+<body   onload="popup('popUpDiv')">
+             
+
+
+
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
