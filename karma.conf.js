@@ -27,7 +27,7 @@ module.exports = function(config) {
   var configuration = {
     files: listFiles(),
 
-    singleRun: true,
+    singleRun: false,
 
     autoWatch: false,
 
@@ -39,12 +39,13 @@ module.exports = function(config) {
 
     ngHtml2JsPreprocessor: {
       stripPrefix: 'src/',
-      moduleName: 'mytodo'
+      moduleName: 'mytodoTemplates'
     },
 
     browsers : ['PhantomJS'],
 
     plugins : [
+      'karma-chrome-launcher',
       'karma-phantomjs-launcher',
       'karma-angular-filesort',
       'karma-jasmine',
