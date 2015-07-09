@@ -1,15 +1,22 @@
 (function() {
-  'use strict';
+    'use strict';
 
-  describe('controllers', function(){
+    describe('controllers', function() {
 
-    beforeEach(module('mytodo'));
+        beforeEach(module('mytodo'));
+        var scope;
 
-    it('should define more than 5 awesome things', inject(function($controller) {
-      var vm = $controller('MainController');
+        // Initialize the controller and a mock scope
+        beforeEach(inject(function($rootScope) {
+            scope = $rootScope.$new();
+        }));
 
-      expect(angular.isArray(vm.awesomeThings)).toBeTruthy();
-      expect(vm.awesomeThings.length > 5).toBeTruthy();
-    }));
-  });
+        it('should define more than 5 awesome things', inject(function($controller) {
+            var vm = $controller("MainController", {
+                $scope: scope
+            });
+
+            expect(typeof scope.addTodo).toEqual('function');
+        }));
+    });
 })();
