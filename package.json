@@ -4,7 +4,8 @@
   "dependencies": {},
   "scripts": {
     "test": "gulp test",
-    "deploy": "./deploy-ghpages.sh"
+    "deploy": "./deploy-ghpages.sh",
+    "postinstall": "bower install"
   },
   "devDependencies": {
     "browser-sync": "~2.7.12",
