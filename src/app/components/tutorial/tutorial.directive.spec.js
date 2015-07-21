@@ -39,7 +39,7 @@ describe("Directive: tutorial", function() {
         console.log("scope tutorial2 ", scope.tutorial2);
         console.log("scope tutorial1 ", scope.tutorial1);
       }
-      expect(angular.element(el).text().trim()).toEqual("hello");
+      expect(angular.element(el).text().trim()).toEqual("hello hello");
       // expect(angular.element(el.find("dd")[0]).text().trim()).toEqual("hello");
     });
   });
