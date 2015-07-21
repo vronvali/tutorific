@@ -8,7 +8,7 @@
  */
 angular.module("mytodo").directive("tutorialSlider", function() {
   return {
-    templateUrl: "components/tutorial/tutorial.html",
+    templateUrl: "app/components/tutorial/tutorial.html",
     restrict: "A",
     transclude: false,
     scope: {
