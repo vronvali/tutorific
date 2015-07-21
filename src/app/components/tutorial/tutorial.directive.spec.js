@@ -43,4 +43,64 @@ describe("Directive: tutorial", function() {
       // expect(angular.element(el.find("dd")[0]).text().trim()).toEqual("hello");
     });
   });
+  xit("should have an array of slides", function() {
+
+    inject(function() {
+      compileFunction(scope); // <== the html {{}} are bound
+      try {
+        if (!scope.$$phase) {
+          scope.$digest(); // <== digest to get the render to show the bound values
+        }
+      } catch (e) {
+        console.log("error digesting scope");
+      }
+      if (debugMode) {
+        console.log("post link", el.html());
+        console.log("scope tutorial2 ", scope.tutorial2);
+        console.log("scope tutorial1 ", scope.tutorial1);
+      }
+      expect(angular.element(el).text().trim()).toEqual("hello");
+      // expect(angular.element(el.find("dd")[0]).text().trim()).toEqual("hello");
+    });
+  });
+  xit("should start on the first slide", function() {
+
+    inject(function() {
+      compileFunction(scope); // <== the html {{}} are bound
+      try {
+        if (!scope.$$phase) {
+          scope.$digest(); // <== digest to get the render to show the bound values
+        }
+      } catch (e) {
+        console.log("error digesting scope");
+      }
+      if (debugMode) {
+        console.log("post link", el.html());
+        console.log("scope tutorial2 ", scope.tutorial2);
+        console.log("scope tutorial1 ", scope.tutorial1);
+      }
+      expect(angular.element(el).text().trim()).toEqual("hello");
+      // expect(angular.element(el.find("dd")[0]).text().trim()).toEqual("hello");
+    });
+  });
+  xit("should go to the next slide if user pushes next", function() {
+
+    inject(function() {
+      compileFunction(scope); // <== the html {{}} are bound
+      try {
+        if (!scope.$$phase) {
+          scope.$digest(); // <== digest to get the render to show the bound values
+        }
+      } catch (e) {
+        console.log("error digesting scope");
+      }
+      if (debugMode) {
+        console.log("post link", el.html());
+        console.log("scope tutorial2 ", scope.tutorial2);
+        console.log("scope tutorial1 ", scope.tutorial1);
+      }
+      expect(angular.element(el).text().trim()).toEqual("hello");
+      // expect(angular.element(el.find("dd")[0]).text().trim()).toEqual("hello");
+    });
+  });
 });
