@@ -1,18 +1,15 @@
 language: node_js
 node_js:
-  - 0.10.33
+  - 0.12
 env:
   global:
     - GH_REF: github.com/vronvali/mytodo-gulp.git
     - secure: neunZFaBP3cEgEltMWSMmT9VJB3vhAIE1hZfehZoyHnsM1xGrMHp4P9rH/d/BJYo+umn4vjDJ82cfdThFzgyi0K5qT7L7Hkj/YhHvYCzCiVun1HOPVhEqPm8T88AsqJdyF+Eld28hGKG/FRNyYGsn81J0UAS4d+lfDRdxprEX9quif9NKIbYsCh6SGVfkBzYo94fBf7Lky3Vje0dRIXfH47kz0w6d1mYmFYGsYtRIkX3OINI1RT5ctPkT7FT6A+QD6ZO0tncpQuqg0SfPcKnq43s09inlx8zW87prGbHWCCt4TVCHABbm3QUsOXuS48b1wsVaII9JKrNWRSJClfRzTdtUtlcds0nN+iOgTAQmpwrSpOhS1W4/Nbmy3SyY6cpjq7IsogJhNShwNb9FipP/4KY0hXh1DDcSxQDnbExu/5vsvAeD/fMANWebq3vCnRtl6+PdftrdMvOpFqZoRiIxAzRJMeNx6yr3cX7mZ8zfLTDWbQSz2g6/lBX4qvtvXg7OhCUoeKcvP+cycDOJZDI7ePvhYwdbC1D9syr6wwT4lhzIQpmgtSGg7GslX3L1IsRtLnXJi/F4dXJsCBy1qgBjMBvhgWrZ2hhYhqZpOllV9bWOxjmaF7iN3kgzRE0dbwQFy1rJ3l7hjK88sQuHPPglYk6LcEOlAj9UGdkehtnm/M=
+before_install:
+  - npm install -g bower karma gulp
 before_script:
   - export CHROME_BIN=chromium-browser
   - 'export DISPLAY=:99.0'
   - sh -e /etc/init.d/xvfb start
-  - npm install -g bower karma grunt-cli jshint
-  - npm install
-  - bower install
-after_script:
-  - npm test
 after_success:
-  - 'test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && bash deploy.sh'
+  - 'test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && bash deploy-ghpages.sh'
