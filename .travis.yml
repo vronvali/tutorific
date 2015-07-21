@@ -15,4 +15,4 @@ before_script:
 after_script:
   - npm test
 after_success:
-  - 'test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && bash deploy.sh'
+  - 'test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && bash deploy-ghpages.sh'
