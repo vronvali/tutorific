@@ -1,1 +1,17 @@
-hello
+<div class="blanket" id="blanket" style="display:none"></div>
+<div class="popup" id="tutorialIntroSlide" style="display:none">
+    <h1>What is our app?</h1>
+    <p>This app is a virtual todo list.</p>
+    <a href="#" ng-click="next_popup(tutorialpopups)">Next</a>
+</div>
+<div class="popup" id="tutorialAddRemoveSlide" style="display:none">
+    <h2>Add/Remove Todos</h2>
+    <p>Type todos into prompted box "What needs to be done?" Once done with your task remove it using the red x.</p>
+    <a href="#" ng-click="next_popup(tutorialpopups)">Next</a>
+</div>
+<div class="popup" id="tutorialStorageSlide" style="display:none">
+    <h3>Storage</h3>
+    <p>Local storage allows you to keep your list even if you close the tab or refresh the page.</p>
+    <a href="#" ng-click="next_popup(tutorialpopups)">Got it!</a>
+</div>
+<a href="#" ng-click="next_popup(tutorialpopups)"></a>
