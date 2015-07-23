@@ -21,6 +21,10 @@ angular.module("tutorific").directive("tutorialSlider", function() {
 
       function toggle(div_id) {
         var el = document.getElementById(div_id);
+        if (!el){
+          console.warn('unable to find '+div_id+' on the page are you sure you have an element with id '+div_id);
+          return;
+        }
         if (el.style.display === 'none') {
           el.style.display = 'block';
         } else {
@@ -47,7 +51,11 @@ angular.module("tutorific").directive("tutorialSlider", function() {
           }
         }
         var blanket = document.getElementById('blanket');
-        blanket.style.height = blanket_height + 'px';
+        if (!blanket){
+          console.warn('unable to find blanket on the page are you sure you have an element with id blanket');
+          return;
+        }
+        blanket.style.height = blanket_height + 'px'; 
         for (var i = $scope.tutorialpopups.length - 1; i >= 0; i--) {
           var popUpDiv = document.getElementById($scope.tutorialpopups[i]);
           popUpDiv_height = blanket_height / 2 - 200; //200 is half popup's height
@@ -73,6 +81,10 @@ angular.module("tutorific").directive("tutorialSlider", function() {
           }
         }
         var popUpDiv = document.getElementById(popUpDivVar);
+        if (!popUpDiv){
+          console.warn('unable to find popUpDiv on the page are you sure you have an element with id popUpDiv');
+          return;
+        }
         window_width = window_width / 2 - 200; //200 is half popup's width
         popUpDiv.style.left = window_width + 'px';
       }
