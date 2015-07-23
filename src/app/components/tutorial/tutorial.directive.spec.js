@@ -5,8 +5,8 @@ var debugMode = false;
 describe("Directive: tutorial", function() {
 
   // load the directive's module and the template
-  beforeEach(module("mytodo"));
-  beforeEach(module("mytodoTemplates"));
+  beforeEach(module("tutorific"));
+  beforeEach(module("tutorificTemplates"));
   var el, scope, compileFunction;
 
   beforeEach(inject(function($rootScope, $compile) {

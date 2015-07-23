@@ -3,11 +3,11 @@
 
 /**
  * @ngdoc directive
- * @name mytodo.directive:fielddbTutorial
+ * @name tutorific.directive:fielddbTutorial
  * @description
  * # fielddbTutorial
  */
-angular.module("mytodo").directive("tutorialSlider", function() {
+angular.module("tutorific").directive("tutorialSlider", function() {
   return {
     templateUrl: "app/components/tutorial/tutorial.html",
     restrict: "A",

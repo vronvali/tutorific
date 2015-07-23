@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('mytodo',
+    .module('tutorific',
      ['ngAnimate', 
      'ngCookies', 
      'ngTouch', 

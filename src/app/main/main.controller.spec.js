@@ -3,7 +3,7 @@
 
     describe('controllers', function() {
 
-        beforeEach(module('mytodo'));
+        beforeEach(module('tutorific'));
         var scope;
 
         // Initialize the controller and a mock scope

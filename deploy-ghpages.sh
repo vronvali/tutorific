@@ -21,11 +21,11 @@ git checkout gh-pages
 
 echo "Moving todo app into the right directory for where it belongs on my website"
 mkdir -p apps
-mv dist apps/todos
+mv dist apps/tutorific
 
 echo "Committing the updated changes to the todo app"
-git add -A apps/todos
-git commit -m "rebuild todo App vronvali/mytodo-gulp at ${rev}"
+git add -A apps/tutorific
+git commit -m "rebuild todo App vronvali/tutorific at ${rev}"
 
 echo "Pushing the changes to my website on github (-q so that nothing gets printed in the travis logs which is sensitive)"
 git push -q mywebsite HEAD:master
