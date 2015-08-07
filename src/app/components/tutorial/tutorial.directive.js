@@ -1,5 +1,5 @@
 "use strict";
-/* globals document, window */
+/* globals document, window, console */
 
 /**
  * @ngdoc directive
